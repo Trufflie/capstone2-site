@@ -1,0 +1,46 @@
+<%- include ('partials/header.ejs') %>
+
+<%  if  (locals.blogTitle){ %>
+    
+
+
+
+         <div class="my-5">
+          <div class="p-5 text-center bg-body-tertiary">
+            <div class="container py-5">
+              <h1 class="text-body-emphasis">
+                <%= blogTitle %>
+              </h1>
+              <p class="col-lg-8 mx-auto lead">
+                <%= bodyContent %>
+              </p>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+         <% } else { %>
+          <div class="row" style="margin: 100px;"></div>
+ <div class="row text-center justify-content-center form-signin m-auto">
+     <h1 class="h3  mb-3 fw-normal">Please sign in</h1>
+ 
+   <form action="/submit" method="POST" >
+ 
+     <div class="mx-auto form-floating col-3 text-center">
+       <input name="password" type="password" class="form-control col-4" id="floatingPassword" placeholder="Password">
+       <label for="floatingPassword">Password</label>
+     </div>
+ 
+     <button class=" btn btn-dark w-100 py-2" type="submit">Sign in</button>
+     
+   </form>
+   <div class="row" style="margin: 100px;"></div>
+   <% } %>
+
+
+
+
+<%- include  ('partials/footer.ejs') %>
